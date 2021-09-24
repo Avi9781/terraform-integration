@@ -1,6 +1,5 @@
 provider "aws" {
-  profile = "terraform_user"
-  access_key = "AKIAX546V3FNS6ZC62YO"
-  secret_key = "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"
+  access_key = "AKIAX546V3FN254T42GD"
+  secret_key = "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"
   region  = "ap-south-1"
 }

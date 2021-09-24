@@ -21,9 +21,14 @@ pipeline {
                 sh 'terraform plan'
             }
             
-        }
-        stage('Terraform apply'){
-            steps{
+        }stage('Approval') {
+           when {
+               not {
+                   equals expected: true, actual: params.autoApprove
+               }
+           }
+        
+           steps{
                 sh 'terraform apply --auto-approve'
             }
             

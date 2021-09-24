@@ -23,11 +23,9 @@ pipeline {
             
         } 
         stage('Approval') {
-           when {
-               not {
-                   equals expected: true, actual: params.autoApprove
-               }
-           }
+           input{
+                message "Do you want to proceed for terraform apply?"
+            }
         
            steps{
                 sh 'terraform apply --auto-approve'

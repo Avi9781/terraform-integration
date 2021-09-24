@@ -28,5 +28,17 @@ pipeline {
             }
             
         }
+        stage('sleep'){
+            steps{
+                sh 'sleep 240'
+            }
+            
+        }
+        stage('Terraform destroy'){
+            steps{
+                sh 'terraform destroy --auto-approve'
+            }
+            
+        }
     }
 }
